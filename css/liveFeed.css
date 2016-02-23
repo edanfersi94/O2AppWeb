@@ -17,16 +17,24 @@
     height: 200px;
 }
 
-td{
+table#weatherTable td{
     height: 28px;
-    background-color: dimgray;
     padding-left: 45px;
 }
+
+table#weatherTable tr{
+}
+
 
 table, th, td
 {
   border: 0;
   font-family:'Calibri';
+}
+
+#viewName{
+    font-family:'Calibri';
+    font-size: 40px;
 }
 
 #topLeftContent2{
