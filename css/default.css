@@ -19,9 +19,13 @@
 }
 
 #navigationBar{
-    width: 600px;
+    width: 620px;
     height: 100px;
     float: left;
+}
+
+#navSection{
+    float: right;
 }
 
 nav{
@@ -37,6 +41,7 @@ nav ul{
 nav ul li {
     display: inline-block;
     list-style-type: none;
+    margin-right: 10px;
 }
 
 nav > ul > li > a {
