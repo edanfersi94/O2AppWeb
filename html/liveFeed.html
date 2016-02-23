@@ -9,6 +9,7 @@
         <link rel="stylesheet" type="text/css" href="../css/infoApp.css">
         <link rel="stylesheet" type="text/css" href="../css/notification.css">
         <link rel="stylesheet" type="text/css" href="../css/radialMenuLittle.css">
+        <link rel="stylesheet" type="text/css" href="../css/liveFeed.css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </head>
     </head>
@@ -41,7 +42,11 @@
                             background-repeat: no-repeat;
                             background-position: center;"
                 >
-                    
+                    <div id="topLeftContent2"><b>
+                        Caracas <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp; 23/02/2016</b><br>
+                        <img src="../images/nubladoLittle.png" style="margin-top:20px;margin-left:15px;">
+                    </div>
                 </div>
                 <div id="bottonLeftContent">
                     <div id="contentPage">
@@ -83,20 +88,73 @@
                         background-position: center;
                         margin-bottom:20px;
                         margin-right:60px;"
+                >
+                    <div id ="topBoxActualWeather">
+                        <div id="topCenterContent2"><b style="padding-left: 90px;">
+                            Caracas 
+                            &nbsp;&nbsp;&nbsp;&nbsp; 23/02/2016</b><br>
+                            <center><img src="../images/nubladoLittle2.png" style="margin-top:10px;margin-left:15px;"><br>
+                            <b>Nublado</b></center>
+                        </div>
+                    </div>
+                    <div id ="bottomBoxActualWeather">
+                        <table id="weatherTable" style="width:370px;">
+                            <tr >
+                                <td style="background-color:white;" id="rowW11">February</td>
+                                <td style="padding-right: 10px;background-color:white;" id="rowW12"><center></center></td>
+                            </tr>
+                            <tr>
+                                <td id="rowW21">February</td>
+                                <td style="padding-right: 10px;" id="rowW22"><center></center></td>
+                            </tr>
+                            <tr>
+                                <td id="rowW31">February</td>
+                                <td style="padding-right: 10px;" id="rowW32"><center></center></td>
+                            </tr>
+                            <tr>
+                                <td id="rowW41">February</td>
+                                <td style="padding-right: 10px;" id="rowW42"><center></center></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom: 5px;" id="rowW51">February</td>
+                                <td style="padding-right: 10px;" id="rowW52"><center></center></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-top: 5px;" id="rowW61">January</td>
+                                <td style="padding-top: 5px;padding-right: 10px;" id="rowW62"><center></center></td>
+                            </tr>
+                        </table>
                         
-                ></div>
+                        <table id="weatherTable2" style="width:370px;">
+                            <tr >
+                                <td style="background-color:white;">1</td>
+                                <td style="padding-right: 10px;background-color:white;">2</td>
+                                <td style="padding-right: 10px;">3></td>
+                            </tr>
+                            <tr>
+                                <td >4</td>
+                                <td style="padding-right: 10px;">5</td>
+                                <td style="padding-right: 10px;">6</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             <div id="rightContent"
                  style="margin-right:80px;">
                 <div id="topRightContent"
                     style="background-image:  url('../images/boxWeather2.png');
                            background-repeat: no-repeat;
                            background-position: center;">
-                    
+                     <div id="topRightContent2"><b>
+                        Caracas <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp; 25/02/2016</b><br>
+                        <img src="../images/nubladoLittle.png" style="margin-top:20px;margin-left:15px;">
+                    </div>
                 </div>
                 <div id="bottonRightContent"
-                    style="background-image:  url('../images/boxStation2.png');
+                    style="background-image:  url('../images/boxStation3.png');
                            background-repeat: no-repeat;
-                           background-position: center;"></div>    
+                           background-position: center;"><center><img src="../images/copoNieve.png" style="margin-top:60px;"></center></div>    
                 
             </div>
         <!-- Script para el radial menú -->
@@ -136,8 +194,33 @@
         
         <!-- Script para el tiempo -->
         <script type="text/javascript">
-            var myVar = setInterval(myTimer, 100);
-            function myTimer(){
+            // Image factory
+            var createImage = function(src, title) {
+                var img   = new Image();
+                img.src   = src;
+                img.alt   = title;
+                img.title = title;
+                return img; 
+            };
+
+            // array of images
+            var images = [];
+
+            // push two images to the array
+            images.push(createImage("../images/nubladoSol3.png", "Soleado con aparición de nubes."));
+            images.push(createImage("../images/nubladoSol3.png", "Soleado con aparición de nubes."));
+            images.push(createImage("../images/nublado3.png", "Nublado"));
+            images.push(createImage("../images/nublado3.png", "Nublado"));
+            images.push(createImage("../images/nubladoLuna2.png", "Soleado con aparición de nubes."));
+            images.push(createImage("../images/nubladoLuna2.png", "Soleado con aparición de nubes."));
+            images.push(createImage("../images/nubladoLuna2.png", "Soleado con aparición de nubes."));
+            images.push(createImage("../images/nubladoLuna2.png", "Soleado con aparición de nubes."));
+            images.push(createImage("../images/nubladoLuna2.png", "Soleado con aparición de nubes."));
+            images.push(createImage("../images/nubladoLuna2.png", "Soleado con aparición de nubes."));
+   
+            var myVar = setInterval(myTimer(images), 100);
+            function myTimer(images){
+                var positionImages = {"15":"0","16":"2","17":"3","18":"4","19":"5","20":"6","21":"7","22":"8","23":"9"};
                 var currentTime = new Date()
                 var hours = currentTime.getHours()
                 var minutes = currentTime.getMinutes()
@@ -145,8 +228,25 @@
                 if (minutes < 10)
                 minutes = "0" + minutes
 
+                document.getElementById("rowW12").innerHTML = "<center><img src=" + images[0].src +"></center>"
+                
+                for(var i=0;i < 6;i++){
+                    var row1 = "rowW"+(i + 1)+"1";
+                    var row2 = "rowW"+(i + 1)+"2"; 
+                    document.getElementById(row1).innerHTML = (hours + i) + ":00";
+                    if (String(hours) in positionImages){
+                        document.getElementById(row2).innerHTML = "<center><img src=" + images[positionImages[String(hours+i)]].src +"></center>"
+                    }else{
+                        document.getElementById(row2).innerHTML = "<center><img src=" + images[2].src +"></center>"
+                    }
+                    
+                }
                 document.getElementById("actualTime").innerHTML = hours + ":" + minutes;
             }
+        </script>
+        
+        <script type="text/javascript">
+
         </script>
     </body>    
 </html>

@@ -1,0 +1,51 @@
+#weatherTable{
+    margin-left: 65px;
+}
+
+#weatherTable2{
+    margin-left: 65px;
+    margin-top: 20px;
+}
+
+#topBoxActualWeather{
+    width: 400px;
+    height: 140px;
+}
+
+#bottomBoxActualWeather{
+    width: 400px;
+    height: 200px;
+}
+
+td{
+    height: 28px;
+    background-color: dimgray;
+    padding-left: 45px;
+}
+
+table, th, td
+{
+  border: 0;
+  font-family:'Calibri';
+}
+
+#topLeftContent2{
+    margin-top:50px;
+    font-family:'Calibri';
+    font-size: 18px;
+    padding-left: 70px;
+}
+
+#topRightContent2{
+    margin-top:50px;
+    font-family:'Calibri';
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+#topCenterContent2{
+    margin-top:10px;
+    font-family:'Calibri';
+    font-size: 18px;
+    padding-left: 80px;
+}
