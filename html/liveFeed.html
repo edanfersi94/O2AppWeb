@@ -14,7 +14,7 @@
     </head>
     <body>
         <div id="headerPage">
-            <div id="viewName"></div>
+            <div id="viewName">LIVE FEED</div>
             <div id="navigationBar">
                 
                 <!-- Navigation Bar -->
@@ -36,43 +36,69 @@
         </div>
         <div id="contentPage">
             <div id="leftContent">
-                <div id="topLeftContent"></div>
+                <div id="topLeftContent"
+                     style="background-image:  url('../images/boxWeather2.png');
+                            background-repeat: no-repeat;
+                            background-position: center;"
+                >
+                    
+                </div>
                 <div id="bottonLeftContent">
                     <div id="contentPage">
                         <div class='selector'>
-                        <ul>
-                            <li>
-                            <input id='c1' >
-                            <label for='c1'><a href="map.html"><img src="../images/mapIconTextLittle.png"></a></label>
-                            </li>
-                            <li>
-                            <input id='c2' >
-                            <label for='c2'><img src="../images/reportIconTextLittle.png"></label>
-                            </li>
-                            <li>
-                            <input id='c3' >
-                            <label for='c3'><a href="config.html"><img src="../images/configIconTextLittle.png"></a></label>
-                            </li>
-                            <li>
-                            <input id='c4' >
-                            <label for='c4'><a href="shutdown.html"><img src="../images/shutdownIconTextLittle.png"></a></label>
-                            </li>
-                            <li>
-                            <input id='c5' >
-                            <label for='c5'><a href="help.html"><img src="../images/helpIconTextLittle.png"></a></label>
-                            </li>
-                            <li>
-                            <input id='c6' >
-                            <label for='c6'><a href="directory.html"><img src="../images/directoryIconTextLittle.png"></a></label>
-                            </li>
-                        </ul>
-                        <button></button>
+                            <ul>
+                                <li>
+                                <input id='c1' >
+                                <label for='c1'><a href="map.html"><img src="../images/mapIconTextLittle.png"></a></label>
+                                </li>
+                                <li>
+                                <input id='c2' >
+                                <label for='c2'><img src="../images/reportIconTextLittle.png"></label>
+                                </li>
+                                <li>
+                                <input id='c3' >
+                                <label for='c3'><a href="config.html"><img src="../images/configIconTextLittle.png"></a></label>
+                                </li>
+                                <li>
+                                <input id='c4' >
+                                <label for='c4'><a href="shutdown.html"><img src="../images/shutdownIconTextLittle.png"></a></label>
+                                </li>
+                                <li>
+                                <input id='c5' >
+                                <label for='c5'><a href="help.html"><img src="../images/helpIconTextLittle.png"></a></label>
+                                </li>
+                                <li>
+                                <input id='c6' >
+                                <label for='c6'><a href="directory.html"><img src="../images/directoryIconTextLittle.png"></a></label>
+                                </li>
+                            </ul>
+                            <button></button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div id="centerContent">Reporte.</div>
-        </div>
-        
+            <div id="centerContent"           
+                 style="background-image:  url('../images/boxActualWeather.png');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        margin-bottom:20px;
+                        margin-right:60px;"
+                        
+                ></div>
+            <div id="rightContent"
+                 style="margin-right:80px;">
+                <div id="topRightContent"
+                    style="background-image:  url('../images/boxWeather2.png');
+                           background-repeat: no-repeat;
+                           background-position: center;">
+                    
+                </div>
+                <div id="bottonRightContent"
+                    style="background-image:  url('../images/boxStation2.png');
+                           background-repeat: no-repeat;
+                           background-position: center;"></div>    
+                
+            </div>
         <!-- Script para el radial menú -->
         <script>
             var nbOptions = 6;

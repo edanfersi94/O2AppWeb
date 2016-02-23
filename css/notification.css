@@ -10,6 +10,7 @@
     height: 260px;
 }
 
+
 #bottonLeftContent{
     width: 300px;
     float: left;
@@ -20,4 +21,23 @@
     width: 500px;
     float: left;
     height: 520px;
+}
+
+#rightContent{
+    width: 200px;
+    float: left;
+    height: 520px;
+}
+
+#topRightContent{
+    width: 200px;
+    float: left;
+    height: 260px; 
+}
+
+
+#bottonRightContent{
+    width: 200px;
+    float: left;
+    height: 200px;
 }
