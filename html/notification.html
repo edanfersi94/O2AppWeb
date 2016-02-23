@@ -2,26 +2,125 @@
 <html>
     <head> 
         <meta charset="utf-8">
-        <title> Prueba </title>
+        <title> Notificaciones </title>
         
         <!-- File references -->
         <link rel="stylesheet" type="text/css" href="../css/default.css">
+        <link rel="stylesheet" type="text/css" href="../css/infoApp.css">
+        <link rel="stylesheet" type="text/css" href="../css/notification.css">
+        <link rel="stylesheet" type="text/css" href="../css/radialMenuLittle.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    </head>
     </head>
     <body>
         <div id="headerPage">
+            <div id="viewName"></div>
             <div id="navigationBar">
+                
                 <!-- Navigation Bar -->
-                <nav>
-                    <ul>
-                        <li><a href="">Notification</a></li>
-                        <li><a href="../default.html">Menu</a></li>
-                        <li><a href="infoApp.html">Information</a></li>
-                    </ul>
-                </nav>
+                <div id="navSection">
+                    <nav>
+                        <ul>
+                            <li><a href="notification.html"><img src="../images/notificationIcon.png"></a></li>
+                            <li><a href="../default.html"><img src="../images/menuIcon.png"></a></li>
+                            <li><img src="../images/infoAppIcon.png"></li>
+                        </ul>
+                    </nav>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="../images/timeIcon.png">
+                    <div id="actualTime" style="float:right;margin-right:12px;font-family:'Calibri';"> </div>
+                </div>
+                
                 <!-- -->
             </div>
         </div>
-        <div id="contentPage">Notification</div>
+        <div id="contentPage">
+            <div id="leftContent">
+                <div id="topLeftContent"></div>
+                <div id="bottonLeftContent">
+                    <div id="contentPage">
+                        <div class='selector'>
+                        <ul>
+                            <li>
+                            <input id='c1' >
+                            <label for='c1'><img src="../images/mapIconTextLittle.png"></label>
+                            </li>
+                            <li>
+                            <input id='c2' >
+                            <label for='c2'><img src="../images/reportIconTextLittle.png"></label>
+                            </li>
+                            <li>
+                            <input id='c3' >
+                            <label for='c3'><img src="../images/configIconTextLittle.png"></label>
+                            </li>
+                            <li>
+                            <input id='c4' >
+                            <label for='c4'><img src="../images/shutdownIconTextLittle.png"></label>
+                            </li>
+                            <li>
+                            <input id='c5' >
+                            <label for='c5'><img src="../images/helpIconTextLittle.png"></label>
+                            </li>
+                            <li>
+                            <input id='c6' >
+                            <label for='c6'><img src="../images/directoryIconTextLittle.png"></label>
+                            </li>
+                        </ul>
+                        <button></button>
+                    </div>
+                </div>
+            </div>
+            <div id="centerContent"></div>
+        </div>
+        
+        <!-- Script para el radial menú -->
+        <script>
+            var nbOptions = 6;
+            var angleStart = -360;
 
+            // jquery rotate animation
+            function rotate(li,d) {
+                $({d:angleStart}).animate({d:d}, {
+                    step: function(now) {
+                        $(li)
+                        .css({ transform: 'rotate('+now+'deg)' })
+                        .find('label')
+                            .css({ transform: 'rotate('+(-now)+'deg)' });
+                    }, duration: 0
+                });
+            }
+
+            // show / hide the options
+            function toggleOptions(s) {
+                $(s).toggleClass('open');
+                var li = $(s).find('li');
+                var deg = $(s).hasClass('half') ? 180/(li.length-1) : 360/li.length;
+                for(var i=0; i<li.length; i++) {
+                    var d = $(s).hasClass('half') ? (i*deg)-90 : i*deg;
+                    $(s).hasClass('open') ? rotate(li[i],d) : rotate(li[i],angleStart);
+                }
+            }
+
+            $('.selector button').click(function(e) {
+                toggleOptions($(this).parent());
+            });
+
+            setTimeout(function() { toggleOptions('.selector'); }, 100);//@ sourceURL=pen.js
+        </script>
+        
+        <!-- Script para el tiempo -->
+        <script type="text/javascript">
+            var myVar = setInterval(myTimer, 100);
+            function myTimer(){
+                var currentTime = new Date()
+                var hours = currentTime.getHours()
+                var minutes = currentTime.getMinutes()
+
+                if (minutes < 10)
+                minutes = "0" + minutes
+
+                document.getElementById("actualTime").innerHTML = hours + ":" + minutes;
+            }
+        </script>
     </body>    
 </html>

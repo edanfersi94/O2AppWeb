@@ -1,0 +1,23 @@
+#leftContent{
+    width: 300px;
+    float: left;
+    height: 520px;
+}
+
+#topLeftContent{
+    width: 300px;
+    float: left;
+    height: 260px;
+}
+
+#bottonLeftContent{
+    width: 300px;
+    float: left;
+    height: 260px;
+}
+
+#centerContent{
+    width: 500px;
+    float: left;
+    height: 520px;
+}
