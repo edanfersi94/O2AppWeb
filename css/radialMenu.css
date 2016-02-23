@@ -28,7 +28,7 @@
   font-size: 20px;
   cursor: pointer;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
-  transition: all .1s;
+  transition: all .1s;   
 }
 
 .selector button:hover { background-image:  url("../images/leaf.png");}
