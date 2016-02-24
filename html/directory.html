@@ -106,12 +106,12 @@
          style="background-image:  url('../images/contacts/callbox3.png');
                 background-repeat: no-repeat;
                 background-position: center;
-                height: 296px;">
+                height: 296px;" id="inicialCall">
         <div id="directoryContentModal">
             
             <center>
                 <p><b style="font-family:'Calibri';font-size: 25px;">Llamando</b></p>
-                <p>Some other text...</p>
+                <div id="actualTimer"></div>
             </center>
             <div style="margin-left:115px;margin-top:35px;">
                 <span class="close"><img src="../images/contacts/stopCall.png"></span>
@@ -231,12 +231,20 @@
                 modal.style.display = "none";
             }
 
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
+            </script>
+            
+            <!-- Script para el contador de segundos. -->
+            <script>
+                var start = new Date();
+                if ($("myModal").css('display') === 'block'){
+                    var end = new Date();
+                    var secondsOpen = Math.floor((end - start) / 1000);
+
+                    document.getElementById("actualTimer").innerHTML= parseInt(secondsOpen/60) + "m " + secondsOpen + "s";  
+                }else{
+                    start = new Date();
                 }
-            }
+                
             </script>
 
 </body>
