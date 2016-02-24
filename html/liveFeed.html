@@ -245,8 +245,19 @@
             }
         </script>
         
+        <!-- Script para el tiempo -->
         <script type="text/javascript">
+            var myVar = setInterval(myTimer, 100);
+            function myTimer(){
+                var currentTime = new Date()
+                var hours = currentTime.getHours()
+                var minutes = currentTime.getMinutes()
 
+                if (minutes < 10)
+                minutes = "0" + minutes
+
+                document.getElementById("actualTime").innerHTML = hours + ":" + minutes;
+            }
         </script>
     </body>    
 </html>

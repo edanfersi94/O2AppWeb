@@ -9,8 +9,55 @@
         <link rel="stylesheet" type="text/css" href="../css/infoApp.css">
         <link rel="stylesheet" type="text/css" href="../css/notification.css">
         <link rel="stylesheet" type="text/css" href="../css/radialMenuLittle.css">
+        <link rel="stylesheet" type="text/css" href="../css/carousel.css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    </head>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.waterwheelCarousel.js"></script>
+        
+        <!-- Script para el Carousel -->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var carousel = $("#carousel").waterwheelCarousel({
+                    flankingItems: 3,
+                    movingToCenter: function ($item) {
+                        $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
+                    },
+                
+                    movedToCenter: function ($item) {
+                        $('#callback-output').prepend('movedToCenter: ' + $item.attr('id') + '<br/>');
+                    },
+                
+                    movingFromCenter: function ($item) {
+                        $('#callback-output').prepend('movingFromCenter: ' + $item.attr('id') + '<br/>');
+                    },
+                
+                    movedFromCenter: function ($item) {
+                        $('#callback-output').prepend('movedFromCenter: ' + $item.attr('id') + '<br/>');
+                    },
+                
+                    clickedCenter: function ($item) {
+                        $('#callback-output').prepend('clickedCenter: ' + $item.attr('id') + '<br/>');
+                    }
+                });
+
+                $('#prev').bind('click', function () {
+                    carousel.prev();
+                    return false
+                });
+
+                $('#next').bind('click', function () {
+                    carousel.next();
+                    return false;
+                });
+
+                $('#reload').bind('click', function () {
+                    newOptions = eval("(" + $('#newoptions').val() + ")");
+                    carousel.reload(newOptions);
+                    return false;
+                });
+
+            })
+        </script>
     </head>
     <body>
         <div id="headerPage">
@@ -36,41 +83,51 @@
         </div>
         <div id="contentPage">
             <div id="leftContent">
-                <div id="topLeftContent"></div>
+                <div id="topLeftContent">
+                     <div id="carousel">
+                    <a href="#"><img src="../images/contacts/reinaldo.png" id="item-1" /></a>
+                    <a href="#"><img src="../images/contacts/ivan.png" id="item-2" /></a>
+                    <a href="#"><img src="../images/contacts/jazme.png" id="item-3" /></a>
+                    <a href="#"><img src="../images/contacts/jasmine.png" id="item-4" /></a>
+                    <a href="#"><img src="../images/contacts/vero.png" id="item-5" /></a>
+                </div>
+                <div id="callDiv"><img src="../images/contacts/callbox2.png"/></div>
+                </div>
                 <div id="bottonLeftContent">
                     <div id="contentPage">
                         <div class='selector'>
-                        <ul>
-                            <li>
-                            <input id='c1' >
-                            <label for='c1'><a href="map.html"><img src="../images/mapIconTextLittle.png"></a></label>
-                            </li>
-                            <li>
-                            <input id='c2' >
-                            <label for='c2'><a href="liveFeed.html"><img src="../images/reportIconTextLittle.png"></a></label>
-                            </li>
-                            <li>
-                            <input id='c3' >
-                            <label for='c3'><a href="config.html"><img src="../images/configIconTextLittle.png"></a></label>
-                            </li>
-                            <li>
-                            <input id='c4' >
-                            <label for='c4'><a href="shutdown.html"><img src="../images/shutdownIconTextLittle.png"></a></label>
-                            </li>
-                            <li>
-                            <input id='c5' >
-                            <label for='c5'><a href="help.html"><img src="../images/helpIconTextLittle.png"></a></label>
-                            </li>
-                            <li>
-                            <input id='c6' >
-                            <label for='c6'><img src="../images/directoryIconTextLittle.png"></label>
-                            </li>
-                        </ul>
-                        <button></button>
+                            <ul>
+                                <li>
+                                <input id='c1' >
+                                <label for='c1'><a href="map.html"><img src="../images/mapIconTextLittle.png"></a></label>
+                                </li>
+                                <li>
+                                <input id='c2' >
+                                <label for='c2'><a href="liveFeed.html"><img src="../images/reportIconTextLittle.png"></a></label>
+                                </li>
+                                <li>
+                                <input id='c3' >
+                                <label for='c3'><a href="config.html"><img src="../images/configIconTextLittle.png"></a></label>
+                                </li>
+                                <li>
+                                <input id='c4' >
+                                <label for='c4'><a href="shutdown.html"><img src="../images/shutdownIconTextLittle.png"></a></label>
+                                </li>
+                                <li>
+                                <input id='c5' >
+                                <label for='c5'><a href="help.html"><img src="../images/helpIconTextLittle.png"></a></label>
+                                </li>
+                                <li>
+                                <input id='c6' >
+                                <label for='c6'><img src="../images/directoryIconTextLittle.png"></label>
+                                </li>
+                            </ul>
+                            <button></button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div id="centerContent">Directory</div>
+        
         </div>
         
         <!-- Script para el radial menú -->
