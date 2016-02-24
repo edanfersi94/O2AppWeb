@@ -11,6 +11,7 @@
         <link rel="stylesheet" type="text/css" href="../css/radialMenuLittle.css">
         <link rel="stylesheet" type="text/css" href="../css/directory.css">
         <link rel="stylesheet" type="text/css" href="../css/carousel.css">
+        <link rel="stylesheet" type="text/css" href="../css/modal.css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="../js/jquery.waterwheelCarousel.js"></script>
@@ -92,7 +93,37 @@
                     <a href="#"><img src="../images/contacts/jasmine.png" id="item-4" /></a>
                     <a href="#"><img src="../images/contacts/vero.png" id="item-5" /></a>
                 </div>
-                <div id="callDiv"><img src="../images/contacts/callbox2.png"/></div>
+                <div id="callDiv"><img src="../images/contacts/callbox2.png" id="myBtn"/>        
+                <!-- Trigger/Open The Modal -->
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-body" 
+         style="background-image:  url('../images/contacts/callbox3.png');
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 296px;">
+        <div id="directoryContentModal">
+            
+            <center>
+                <p><b style="font-family:'Calibri';font-size: 25px;">Llamando</b></p>
+                <p>Some other text...</p>
+            </center>
+            <div style="margin-left:115px;margin-top:35px;">
+                <span class="close"><img src="../images/contacts/stopCall.png"></span>
+            </div>
+        </div>
+    </div>
+  </div>
+
+</div>
+
+        </div>
+        </div>
                 </div>
                 <div id="bottonLeftContent">
                     <div id="contentPage">
@@ -128,9 +159,7 @@
                     </div>
                 </div>
             </div>
-        
-        </div>
-        
+
         <!-- Script para el radial menú -->
         <script>
             var nbOptions = 6;
@@ -180,5 +209,38 @@
                 document.getElementById("actualTime").innerHTML = hours + ":" + minutes;
             }
         </script>
+        
+        <!-- Script del modal -->
+        <script>
+            // Get the modal
+            var modal = document.getElementById('myModal');
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks the button, open the modal 
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+            </script>
+
+</body>
+</html>
+
     </body>    
 </html>
